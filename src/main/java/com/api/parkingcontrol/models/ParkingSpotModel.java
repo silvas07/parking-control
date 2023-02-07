@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_PARKING_SPOT")
-class ParkingSpotModel implements Serializable{
+public class ParkingSpotModel implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -28,7 +28,7 @@ class ParkingSpotModel implements Serializable{
     @Column(nullable = false, length = 130)
     private String rensponsibleName;
     @Column(nullable = false, unique = true, length = 30)
-    private String apartament;
+    private String apartment;
     @Column(nullable = false, length = 30)
     private String block;
 
@@ -96,12 +96,12 @@ class ParkingSpotModel implements Serializable{
         this.rensponsibleName = rensponsibleName;
     }
 
-    public String getApartament() {
-        return apartament;
+    public String getApartment() {
+        return apartment;
     }
 
-    public void setApartament(String apartament) {
-        this.apartament = apartament;
+    public void setApartment(String apartment) {
+        this.apartment = apartment;
     }
 
     public String getBlock() {
