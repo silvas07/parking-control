@@ -86,4 +86,19 @@ public class ParkingSpotDto {
     public void setBlock(String block) {
         this.block = block;
     }
+
+    public ParkingSpotDto(String parkingSpotNumber, String licensePlateCar, String brandCar, String modelCar, String colorCar, String responsibleName, String apartment, String block) {
+        this.parkingSpotNumber = parkingSpotNumber;
+        this.licensePlateCar = licensePlateCar;
+        this.brandCar = brandCar;
+        this.modelCar = modelCar;
+        this.colorCar = colorCar;
+        this.responsibleName = responsibleName;
+        this.apartment = apartment;
+        this.block = block;
+    }
+
+    public ParkingSpotDto() {
+    }
+
 }
