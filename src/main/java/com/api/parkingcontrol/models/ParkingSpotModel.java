@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_PARKING_SPOT")
-class ParkingSpotModel implements Serializable{
+public class ParkingSpotModel implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -16,7 +16,7 @@ class ParkingSpotModel implements Serializable{
     @Column(nullable = false, unique = true, length = 10)
     private String parkingSpotNumber;
     @Column(nullable = false, unique = true, length = 7)
-    private String licencePlateCar;
+    private String licensePlateCar;
     @Column(nullable = false, unique = true, length = 70)
     private String brandCar;
     @Column(nullable = false, unique = true, length = 70)
@@ -26,9 +26,9 @@ class ParkingSpotModel implements Serializable{
     @Column(nullable = false)
     private LocalDateTime registrationDate;
     @Column(nullable = false, length = 130)
-    private String rensponsibleName;
+    private String responsibleName;
     @Column(nullable = false, unique = true, length = 30)
-    private String apartament;
+    private String apartment;
     @Column(nullable = false, length = 30)
     private String block;
 
@@ -48,12 +48,12 @@ class ParkingSpotModel implements Serializable{
         this.parkingSpotNumber = parkingSpotNumber;
     }
 
-    public String getLicencePlateCar() {
-        return licencePlateCar;
+    public String getLicensePlateCar() {
+        return licensePlateCar;
     }
 
-    public void setLicencePlateCar(String licencePlateCar) {
-        this.licencePlateCar = licencePlateCar;
+    public void setLicensePlateCar(String licensePlateCar) {
+        this.licensePlateCar = licensePlateCar;
     }
 
     public String getBrandCar() {
@@ -88,20 +88,14 @@ class ParkingSpotModel implements Serializable{
         this.registrationDate = registrationDate;
     }
 
-    public String getRensponsibleName() {
-        return rensponsibleName;
+
+
+    public String getApartment() {
+        return apartment;
     }
 
-    public void setRensponsibleName(String rensponsibleName) {
-        this.rensponsibleName = rensponsibleName;
-    }
-
-    public String getApartament() {
-        return apartament;
-    }
-
-    public void setApartament(String apartament) {
-        this.apartament = apartament;
+    public void setApartment(String apartment) {
+        this.apartment = apartment;
     }
 
     public String getBlock() {
@@ -110,5 +104,30 @@ class ParkingSpotModel implements Serializable{
 
     public void setBlock(String block) {
         this.block = block;
+    }
+
+    public String getResponsibleName() {
+        return responsibleName;
+    }
+
+    public void setResponsibleName(String responsibleName) {
+        this.responsibleName = responsibleName;
+    }
+
+
+    public ParkingSpotModel(UUID id, String parkingSpotNumber, String licensePlateCar, String brandCar, String modelCar, String colorCar, LocalDateTime registrationDate, String responsibleName, String apartment, String block) {
+        this.id = id;
+        this.parkingSpotNumber = parkingSpotNumber;
+        this.licensePlateCar = licensePlateCar;
+        this.brandCar = brandCar;
+        this.modelCar = modelCar;
+        this.colorCar = colorCar;
+        this.registrationDate = registrationDate;
+        this.responsibleName = responsibleName;
+        this.apartment = apartment;
+        this.block = block;
+    }
+
+    public ParkingSpotModel() {
     }
 }
